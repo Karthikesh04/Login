@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .display-container {
+            width: 300px;
+            padding: 20px;
+            background-color: white;
+            margin: 100px auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .display-container p {
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="display-container">
+        <h2>Login Information</h2>
+        <p><strong>Username:</strong> <span id="display-username"></span></p>
+        <p><strong>Password:</strong> <span id="display-password"></span></p>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+        const password = urlParams.get('password');
+        
+        document.getElementById('display-username').textContent = username;
+        document.getElementById('display-password').textContent = password;
+    </script>
+</body>
+</html>
